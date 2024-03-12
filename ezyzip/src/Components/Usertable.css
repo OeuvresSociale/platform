@@ -1,0 +1,169 @@
+.box {
+   
+    width:(100% - 300px );
+    height: 1000px;;
+   
+    background-color: #fff;
+    position: relative;
+   margin:30px;
+    border-radius: 7px;
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .subbox {
+     background: #fff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+   
+  }
+  
+  .search {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 0;
+    outline:none;
+   background-color: #F7F7F7 ;
+   padding:8px;
+
+   position: absolute;
+    left: 20px;
+    top:20px;
+        
+    
+   } .search svg{
+      color:#999999;
+      font-weight: 600;
+    }
+   
+  .inp{
+    background-color: transparent;
+    width:300px;
+    height: 45;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    color:#999999 ;
+    font-size: 15px;
+    
+  }
+  
+  .btn {
+   width: 210px;
+   height: 40px;
+ 
+  background-color: #148582; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+ 
+  cursor: pointer;
+  position:absolute;
+  right: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: center;
+  padding: 8px 12px; 
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+ 
+  
+ 
+  }
+  .btn svg {
+    background-color: transparent; /* Set to the desired background color or 'transparent' */
+    /* Add spacing between the icon and text if needed */
+  }
+
+
+ 
+
+  .tableu {
+    width: 100%px;
+    background-color: transparent;
+    position: relative;
+    top:20px;
+    margin-top: 70px;
+   
+  }table {
+    width:100%;
+    background-color:#fff ;
+    position: relative;
+    
+    margin-top: 90px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    border-left: 2px solid #fff;
+   
+  }
+  
+  th {
+    background-color: #fff;
+    color: #148582;
+  }
+  th, td {
+    width: 300px; /* 100% divided by the number of columns (6 columns in this case) */
+  }
+  
+  /* Styles for the last column (actions) */
+  .lastcolumn {
+    width: 300px;
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    gap: 30px;
+    
+  }
+  
+  /* Style for the action icons (e.g., delete and edit) */
+  .lastcolumn svg {
+    cursor: pointer;
+    margin: 0 5px;
+    color: #999999; 
+    width:30px;
+    height: 30px;
+  
+    background-color: transparent;
+    
+  }
+  
+  
+  .custom-select {
+    position: relative;
+  }
+  
+  select{
+    position: relative;
+    display: inline-block;
+    outline:none;
+    border:none;
+    margin-top: 15px;
+    margin-left: 30px;
+    width:250px
+  }
+  
+  
+
+
+
+
+
+
+
+
