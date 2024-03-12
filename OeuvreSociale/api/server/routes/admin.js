@@ -5,7 +5,7 @@ const router=Router();
 const controller =require('../controllers/adminController');
 const Auth = require('../middleware/auth.js');
 const { localVariables } = require('../middleware/auth.js');
-const {registerMail} = require('../controllers/mailer');
+//const {registerMail} = require('../controllers/mailer');
 
 //END POINTS for admin interface - for now it is for bith admin and employee
 
