@@ -8,7 +8,7 @@ const Header = () => {
   return (
    <div className='container'>
 <div className='box1'>
-    <div className='logo'><img src='Logosec' /></div> 
+    <div className='logo'><img src='Logo' /></div> 
     <div className='em'>Gestion des employés</div>
 </div>
 <div className='box2'>
