@@ -11,7 +11,7 @@ export const Login = () => {
     return(
         <div className="wrapper">
           <div className="blue-section">
-            <img src="./assets/logo.png" alt="logo" className="logo" />
+            <img src="./Assets/logo.png" alt="logo" className="logo" />
           </div>
             <form onSubmit={handleSubmit}>
               <h1>Belink</h1>  
