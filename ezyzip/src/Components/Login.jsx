@@ -1,6 +1,6 @@
-import "./Login.css"
-import React,{useState} from "react"
-export const Login = () => {
+import "./Login.css";
+import React,{useState} from "react";
+ const Login = () => {
     const [email, setEmail]=useState('');
     const [pass, setPass] = useState('');
 
@@ -27,5 +27,6 @@ export const Login = () => {
                  <button type="submit"> Log In </button> 
             </form>
         </div>
-    )
-}
+    );
+};
+export default Login ;
