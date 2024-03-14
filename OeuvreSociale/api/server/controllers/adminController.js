@@ -27,7 +27,7 @@ let useremail; //email of user so we can send him an otp email
     "monthlySalary": "12",
     "isCommit": "false",
     "role": "employee"
-}
+} 
 */
 
 //post : register new employee with hash password and testing existance

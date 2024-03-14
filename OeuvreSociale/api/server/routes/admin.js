@@ -16,7 +16,7 @@ router.route('/authentication').post((req,res)=>res.end());  // authenticate use
 router.route('/login').post(controller.login);  // login in app
 router.route('/sendEmail').post(controller.sendEmail); 
 router.route('/forgotPassword').post(controller.forgotPassword); 
-
+ 
 /**GET METHODS */
 router.route('/user/:idEmployee').get(controller.getUser);   //get user with idEmployee
 router.route('/generateOTP').get(controller.generateOTP);  //generate random OTP
@@ -41,4 +41,4 @@ module.exports=router;
 
 
 
-module.exports=router;
+
