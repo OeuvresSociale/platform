@@ -1,0 +1,64 @@
+
+.container{
+    
+    width:(100% - 300px );
+  
+    height:56px ;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+
+}   .box1{
+     display: flex;
+     flex-direction: row;
+     background-color: #fff;
+     width:100%;
+
+
+    }
+    
+    .logo{
+    width: 52px;
+    height: 57px;
+    align-items: center;
+    background: #fff;
+}
+.em{
+   
+    font-size: 15px;
+    color:#00194F;
+    font-weight: 700;
+    align-self: center;
+    padding-left: 5px;
+    border-left: 2px #D9D9D9 solid;
+    background: #fff;
+    
+
+}
+.container .box2{
+    position: absolute;
+width:70px;
+height: 56px;
+display: flex;
+flex-direction: row;
+gap:5px;
+right: 0;
+font-size: 53px;
+background: #fff;
+
+}
+.profile {
+    cursor: pointer;
+    background: #fff;
+}.profile svg {
+    background-color: transparent;
+}
+.notification {
+    cursor: pointer;
+    background: #fff;
+}.notification svg {
+    background-color: transparent;
+}
+

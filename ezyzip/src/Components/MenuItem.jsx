@@ -1,0 +1,54 @@
+import React, { useState } from "react";
+import { FaSackDollar , FaBoxArchive , FaUserGroup } from "react-icons/fa6";
+import './Sidebar.css'
+import { NavLink } from 'react-router-dom';
+
+
+const MenuItem =(props) => {
+const { name , icon ,path, subicon,subicon2, subMenus } = props;
+const [expand , setExpand]= useState(false);
+const hide = () => setExpand(!expand);
+
+
+return (
+<li >
+ 
+ <NavLink to={path} onClick={hide}  className="menuitem" activeclassname='active' >
+ <a  className="menuitem">
+    <div className="menuicon">
+    {icon}
+    
+    </div> </a>
+    <span className="link-taxt">{name}</span>
+    <div className="subicon"  style={{ backgroundColor: 'transparent' }} >
+    {expand ? subicon2 : subicon }
+    </div>
+    
+    </NavLink>
+
+ {subMenus && subMenus.length > 0 ? (
+    <ul className={expand ?  "ai" : 'submenu'}>
+        {subMenus.map((menu,index) =>(
+            <NavLink to={menu.path} >
+            <li className= "ayhaja " key={index} >
+               
+                <a className="sicon">{menu.icon}</a>
+                <span className="subname">{menu.name}</span>
+              
+            </li></NavLink>
+        ))}
+    </ul>
+ ) : null }
+
+
+
+
+
+
+</li>
+);
+
+
+};
+
+export default MenuItem ;
