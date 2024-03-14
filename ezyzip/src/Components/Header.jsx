@@ -2,7 +2,7 @@ import react from 'react';
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import './Header.css'
-import Logo from '../Assets/Logo.png'
+import Logo from '../Assets/Logosec.png'
 
 const Header = () => {
   return (
