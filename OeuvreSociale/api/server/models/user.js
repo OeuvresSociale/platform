@@ -1,27 +1,87 @@
 const mongoose = require ('mongoose');
 
-const schema = schema.mongoose;
+const schema = mongoose.Schema;
 const userSchema = new schema ({
-    idEmployee:{},
-    familyName:{},
-    firstName:{},
-    fassword:{},
-    email:{},
-    phoneNumber:{},
-    sexe:{},
-    isMarried:{},
-    numberOfChild:{},
-    bankAccount:{},
-    monthlySalary:{},
-    dateStartJob:{},
-    isCommit:{},
-    role:{},
-    profilePicture:{},
+    idEmployee:{
+        type:String,
+        required : true,
+        unique: [true,"id Exist"]
+    },
+    familyName:{
+        type:String,
+        required : true,
+        unique : false
+        
+    },
+    firstName:{
+        type:String,
+        required:true,
+        unique : false
+        
+    },
+    password:{ 
+        type:String,
+        required:true,
+        unique : false
+      //  default : idEmployee
+    },
+    email:{
+    type: String,
+    required : true,
+    unique: true
+    },
+    phoneNumber:{
+        type:String,
+        required:true,
+        unique : true
+    },
+    sexe:{
+        type:String,
+        required:true,
+        
+    },
+    isMarried:{
+        type:Boolean,
+        required:true,
+        
+    },
+    numberOfChild:{
+        type:String,
+        required:false,
+        unique : false
+    },
+    bankAccount:{
+        type:String,
+        required:true,
+        unique : true
+    },
+    monthlySalary:{
+        type:Number,
+        required:true,
+        unique : false
+    },
+    dateStartJob:{
+        type:Date,
+        required:false
+        
+    },
+    isCommit:{
+        type:Boolean,
+        required:true
+        
+    },
+    role:{
+        type:String,
+        required:true,
+        default :"member"
+       
+    },
+    profilePicture:{
+        type:String,
+        required:false,
+        unique : false
+    },
 
 });
-
-
-
-
 
 module.exports=mongoose.model('User',userSchema);
