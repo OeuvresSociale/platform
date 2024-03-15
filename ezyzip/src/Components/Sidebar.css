@@ -8,12 +8,12 @@ body {
   .sidemenu {
     
     display: flex;
-    flex-direction: column; /* Ensure flex items stack vertically */
+    flex-direction: column; 
     height: 100%;
     width: 370px;
    
-    background-color: #00194F; /* Blue background color */
-    color: #fff; /* White text color */
+    background-color: #00194F; 
+    color: #fff; 
     
     
     
@@ -24,7 +24,7 @@ body {
     flex-direction: column; 
     width:86px;
     height: 100%;
-    background-color: #00194F; /* Blue background color */
+    background-color: #00194F; 
     color: #fff;
     transition: width 0.5s ease-in-out;
   }
@@ -35,7 +35,7 @@ body {
  
   
   .top-section {
-    background-color: #00194F; /* Adjust the top section color */
+    background-color: #00194F; 
     color: #fff;
     
     text-align: center;
@@ -71,7 +71,7 @@ body {
     
     width: 100%;
    
-    background-color: #00194F; /* Adjust the content background color */
+    background-color: #00194F; 
     
    
   }
@@ -80,7 +80,7 @@ body {
     display: flex;
     align-items: center;
     
-    color: #fff; /* White text color */
+    color: #fff; 
     text-decoration: none;
     background-color: #00194F;
     
