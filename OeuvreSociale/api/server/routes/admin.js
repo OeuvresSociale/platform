@@ -4,18 +4,19 @@ const router=Router();
 
 const controller =require('../controllers/adminController');
 const controlle =require('../controllers/img');
+const notification =require('../controllers/notification');
 const Auth = require('../middleware/auth.js');
 const { localVariables } = require('../middleware/auth.js');
 
 
 //END POINTS for admin interface - for now it is for bith admin and employee
 
-
+  
 /**POST METHODS */
 router.route('/register').post(controller.register); //register user
 router.route('/authentication').post((req,res)=>res.end());  // authenticate user
 router.route('/login').post(controller.login);  // login in app
-router.route('/sendEmail').post(controller.sendEmail); 
+router.route('/sendEmail').post(notification.sendEmail); 
 router.route('/forgotPassword').post(controller.forgotPassword); 
 //router.route('/notification').post(controller.notification);
 router.route('/uploadImage').post(controlle.uploadImage);

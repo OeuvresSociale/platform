@@ -3,14 +3,14 @@
  * the controllers work I'll change the code to the right place
 */
 
-const UserModel =require('../models/user.js'); 
+const UserModel =require('../models/user.js');
+const notification =require('../controllers/notification'); 
 const bcrypt =require('bcrypt'); 
 const jwt = require('jsonwebtoken'); 
 const jwtSecret = process.env.JWT_SECRET;
 const dotenv =require("dotenv").config();
 const otpGenerator =require('otp-generator');
-const nodemailer = require('nodemailer');
-const multer = require('multer');
+
 
 
 
@@ -118,12 +118,29 @@ async function register(req,res){
                                 role,
                                 profilePicture
                             });
-
+                           
                             // return save result as a response
                             user.save()
-                                .then(result => res.status(201).send({ msg: "User Register Successfully"}))
-                                .catch(error => res.status(500).send({error}))
-
+                            
+                            .then(result => {
+                                // Send email notification
+                                notification.sendEmail({
+                                    body: {
+                                        to:email, // Use the email provided in the request
+                                        subject: "Oeuvre Sociale Account",
+                                        message: `Voici votre mot de passe: ${password}`
+                                    }
+                                }, {})
+                                .then(() => {
+                                    console.log("Email notification sent successfully.");
+                                    res.status(201).send({ msg: "User registered successfully" });
+                                })
+                                .catch(error => {
+                                    console.error("Error sending email notification:", error);
+                                    res.status(500).send({ error: "Error sending email notification" });
+                                });
+                            })
+                 
                         }).catch(error => {
                             return res.status(500).send({
                                 error : "Enable to hashed password"
@@ -264,7 +281,18 @@ async function generateOTP(req,res){
     req.app.locals.OTP = await otpGenerator.generate(6, { lowerCaseAlphabets: false, 
         upperCaseAlphabets: false, specialChars: false})
     res.status(201).send({ code: req.app.locals.OTP })
-    
+   // res.json(useremail);
+    console.log(useremail);
+
+    notification.sendEmail({
+        body: {
+            to: useremail,
+            subject:'Your OTP code',
+            message:`Your OTP is: ${req.app.locals.OTP}`
+            
+        }
+    }, 
+    {});
     }
    
 /** GET: http://localhost:8000/api/verifyOTP */
@@ -335,39 +363,9 @@ async function logout(req,res){
     res.clearCookie('token');
     res.json({message:'logout successfuly'});   
 }
-  
-async function sendEmail(req,res){
-     
-    req.app.locals.OTP = await otpGenerator.generate(6, { lowerCaseAlphabets: false, 
-        upperCaseAlphabets: false, specialChars: false})
-    res.json(useremail);
-    console.log(useremail);
-    
-    const{to,subject,message}=req.body;   
-  
-    const transporter = nodemailer.createTransport({
-        
-        service:'gmail',
-        auth: {
-             user:process.env.SENDGRID_USERNAME, /// Your Gmail address
-             pass:process.env.SENDGRID_PASSWORD  //// Your Gmail password or App Password
-        }
-    });
-    const mailOptions ={
-        from:process.env.SENDGRID_USERNAME,
-        to:useremail, 
-        subject:'Your OTP code',
-        text:`Your OTP is: ${req.app.locals.OTP}`
-    }
-    
-    transporter.sendMail(mailOptions, function(error,info){
-        if (error){
-            console.log({error:"error in transporter"});
-        }else{
-            console.log('email send :'+ info.response)  ;
-        }
-    })
-}
+
+
+
 
 /**enter email address and compaire with the existant one in db
 then send otp to address email and reset the password*/
@@ -397,7 +395,6 @@ module.exports = {
     resetPassword,
     logout,
     useremail,
-    sendEmail,
     forgotPassword
     
     
