@@ -10,7 +10,7 @@ const Addemployee = () => {
     <div>
      <div className="containerf">
       <Sidebar  className='sidebarf'/>
-      <div className="content">
+      <div className="contentf">
         <Header className="headerf" />
        <Formulaire className='forme'/>
       </div>
