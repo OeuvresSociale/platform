@@ -1,20 +1,19 @@
-
 .container{
     
-    width:(100% - 340px );
+    width:(100% - 250px );
   
     height:56px ;
     background-color: #fff;
     display: flex;
     flex-direction: row;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
 
 }   .box1{
      display: flex;
      flex-direction: row;
      background-color: #fff;
      width:100%;
+     height: 56px;
 
 
     }
@@ -27,6 +26,7 @@
 }
 .em{
    
+   
     font-size: 15px;
     color:#00194F;
     font-weight: 700;
@@ -37,9 +37,9 @@
     
 
 }
-.container .box2{
-    position: absolute;
-width:70px;
+ .box2{
+  
+
 height: 56px;
 display: flex;
 flex-direction: row;
@@ -61,4 +61,7 @@ background: #fff;
 }.notification svg {
     background-color: transparent;
 }
+
+
+
 
