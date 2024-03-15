@@ -108,9 +108,12 @@
   }
   .btns{
     display: flex;
-     margin-left: 222px;
+    
     gap :8px;
-    margin-top: 10px;
+  
+    position:absolute;
+    right:0;
+     margin-right: 65px;
     background-color: #F7F7F7 ;
   }.cancel{
     width:100px;
@@ -148,6 +151,9 @@
   }table {
     width:100%;
     background-color:#fff ;
+     position:absolute;
+    padding-left: 30px;
+    padding-right:30px;
   }
   
   th, td {
@@ -165,12 +171,12 @@
   }
   th, td {
     background-color: #fff;
-    width: 300px; 
+    width: 16.66%; 
   }
   
  
   .lastcolumn {
-    width: 300px;
+    width: 16.66%; 
     height: 38px;
     display: flex;
     justify-content: space-between;
