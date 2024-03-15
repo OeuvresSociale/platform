@@ -7,15 +7,17 @@ import Sidebar from '../Components/Sidebar';
 
 const Employeelist = () => {
   return (
-    <div>
-     <div className="container">
+   
+     <div className="containere"  style={{ backgroundColor: '#EAEDEF' }}>
       <Sidebar  className='sidebar'/>
-      <div className="content">
+      <div className="contente">
         <Header className="header" />
         <Usertable className="usertable" />
       </div>
-    </div>
+  
  </div> );
 };
+
+
 
 export default Employeelist;
