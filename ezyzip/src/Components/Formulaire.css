@@ -1,7 +1,7 @@
 .boxf {
   
     width:(100% - 340px );
-    height: 1000px;
+    height: 100%;
    
     background-color: #fff;
     position: relative;
@@ -39,6 +39,7 @@
   }.searchf svg{
     color:#999999;
     font-weight: 600;
+    background-color: transparent;
   }
   
   
@@ -110,11 +111,11 @@
     display: flex;
     
     gap :8px;
-  
+   
+    background-color: #F7F7F7 ;
     position:absolute;
     right:0;
-     margin-right: 65px;
-    background-color: #F7F7F7 ;
+    margin-right: 65px;
   }.cancel{
     width:100px;
     height:35px;
@@ -147,13 +148,16 @@
     position: relative;
     top:580px;
     margin-top: 70px;
+    
    
+  
   }table {
     width:100%;
     background-color:#fff ;
-     position:absolute;
+    position:absolute;
     padding-left: 30px;
     padding-right:30px;
+   
   }
   
   th, td {
@@ -228,6 +232,23 @@
   }
   
   
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
 
 
 
