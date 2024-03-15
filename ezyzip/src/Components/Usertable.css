@@ -1,7 +1,7 @@
 .box {
    
     width:(100% - 340px );
-    height: 1000px;;
+    height: 100%;
    
     background-color: #fff;
     position: relative;
@@ -38,6 +38,7 @@
    } .search svg{
       color:#999999;
       font-weight: 600;
+      background-color: transparent;
     }
    
   .inp{
@@ -78,28 +79,28 @@
  
   }
   .btn svg {
-    background-color: transparent; /* Set to the desired background color or 'transparent' */
-    /* Add spacing between the icon and text if needed */
+    background-color: transparent; 
   }
 
 
  
 
   .tableu {
-    width: 100%px;
-    background-color: transparent;
+    background-color:#fff;
+   
     position: relative;
     top:20px;
     margin-top: 70px;
-      padding-left: 30px;
-   padding-right:30px;
    
   }table {
     width:100%;
-    background-color:#fff ;
+    background-color:#fff;
     position: relative;
-  
+   
     margin-top: 90px;
+    padding-left: 30px;
+    padding-right:30px;
+   
   }
   
   th, td {
@@ -107,7 +108,7 @@
     text-align: center;
     border-bottom: 1px solid #ddd;
     background-color: #fff;
-    border-left: 2px solid #fff;
+    
    
   }
   
@@ -116,15 +117,15 @@
     color: #148582;
   }
   th, td {
-    width: 300px; /* 100% divided by the number of columns (6 columns in this case) */
+    width: 300px; 
   }
   
-  /* Styles for the last column (actions) */
+  
   .lastcolumn {
     width: 300px;
     height: 38px;
     display: flex;
-    justify-content: space-between;
+   
     background-color: #fff;
     align-items: center;
     justify-content: center;
@@ -133,7 +134,7 @@
     
   }
   
-  /* Style for the action icons (e.g., delete and edit) */
+ 
   .lastcolumn svg {
     cursor: pointer;
     margin: 0 5px;
@@ -161,9 +162,6 @@
   }
   
   
-
-
-
 
 
 
