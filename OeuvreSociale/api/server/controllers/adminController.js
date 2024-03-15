@@ -10,6 +10,9 @@ const jwtSecret = process.env.JWT_SECRET;
 const dotenv =require("dotenv").config();
 const otpGenerator =require('otp-generator');
 const nodemailer = require('nodemailer');
+const multer = require('multer');
+
+
 
 let useremail; //email of user so we can send him an otp email
 
@@ -91,6 +94,7 @@ async function register(req,res){
         }
 
 
+    
         Promise.all([checkExistingUser,checkExistingEmail,checkExistingPhoneNumber, checkExistingBankAccount])
             .then(() => {
                 if(password){
@@ -100,7 +104,7 @@ async function register(req,res){
                             const user = new UserModel({
                                 firstName,
                                 password: hashedPassword,
-                                 email,
+                                email,
                                 idEmployee,
                                 familyName,
                                 phoneNumber,
@@ -371,11 +375,18 @@ async function forgotPassword(req,res){
     
 }
 
-async function uploadImage(req,res){}
+
+
 
 async function addRole(req,res){}
 
+
+
+
+
+
 module.exports = {
+
     register,
     login,
     getUser, 
@@ -388,5 +399,6 @@ module.exports = {
     useremail,
     sendEmail,
     forgotPassword
+    
     
 };

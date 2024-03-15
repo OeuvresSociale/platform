@@ -77,10 +77,12 @@ const userSchema = new schema ({
        
     },
     profilePicture:{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
         required:false,
-        unique : false
+        unique : false,
+        ref: 'imageModel'
     },
+
 
 });
 
