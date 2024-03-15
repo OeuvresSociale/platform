@@ -91,12 +91,14 @@
     position: relative;
     top:20px;
     margin-top: 70px;
+      padding-left: 30px;
+   padding-right:30px;
    
   }table {
     width:100%;
     background-color:#fff ;
     position: relative;
-    
+  
     margin-top: 90px;
   }
   
