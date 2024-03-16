@@ -128,14 +128,14 @@ body {
     color:#fff;
     background-color: #00194F;
     text-decoration: none;
-   
+    display:flex;
     
   } .ai{
     display: none;
   }
 
   .ayhaja:hover{
-     
+     display:flex;
       background-color: #EAEDEF;
       color:#00194F;
    
