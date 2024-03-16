@@ -8,6 +8,9 @@ import './App.css'
 import Usertable from './Components/Usertable.jsx';
 import Formulaire from './Components/Formulaire.jsx';
 import Login from './Components/Login.jsx';
+import Modefyuser from './Components/Modefyuser.jsx';
+import Deleteuser from './Components/Deleteuser.jsx';
+
 const App = () => {
   return (
     <BrowserRouter >
@@ -17,6 +20,8 @@ const App = () => {
           <Route path='/employeelist/Addemployee' element={<Addemployee />} />
           <Route path='/employeelist' element={<Employeelist />} />
          <Route path='/login' element={<Login />} />
+     <Route path='/employeelist/modefyuser' element={<Modefyuser/>} />
+         <Route path='/employeelist/deleteuser' element={<Deleteuser/>} />
         </Routes>
      
      
