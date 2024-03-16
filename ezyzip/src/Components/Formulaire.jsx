@@ -5,9 +5,16 @@ import { MdOutlineModeEditOutline } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import './Formulaire.css';
 import { BsSearch } from "react-icons/bs";
+import Deleteuser from "./Deleteuser";
+import Modefyuser from "./Modefyuser";
+
 
 
 const Formulaire = () => {
+const[openDelete,setOpenDelete]=useState(false);
+  const[openModefy,setOpenModefy]=useState(false);
+
+    
     const [selectedGender, setSelectedGender] = useState(''); 
 
     const handleGenderChange = (e) => {
@@ -159,8 +166,8 @@ const Formulaire = () => {
             <td>dahoun@esi-sba.dz</td>
             <td>40000</td>
             <td>admin</td>
-            <td className="lastcolumn"><GoTrash />
-            <MdOutlineModeEditOutline /></td>
+            <td className="lastcolumn"><GoTrash onClick={ () =>{setOpenDelete(true);}} />
+            <MdOutlineModeEditOutline  onClick={ () =>{setOpenModefy(true);}} /></td>
           </tr>
 
           <tr>
@@ -185,6 +192,8 @@ const Formulaire = () => {
 
 
 
+  {openModefy && <Modefyuser closeModefy={setOpenModefy } />}
+           {openDelete && <Deleteuser  closeDelete={setOpenDelete} />}
 
 
       </div>
