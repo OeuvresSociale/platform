@@ -56,21 +56,41 @@ async function register(req,res){
         }
         
 
-        // check for existing email
+        // check for existing email + email validation in regular expression
         async function checkExistingEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
             try {
+                // Check if the email format is valid
+                if (!emailRegex.test(email)) {
+                    throw new Error('Invalid email format');
+                }
+        
+                // Check if the email already exists in the database
                 const user = await UserModel.findOne({ email });
                 if (user) {
                     throw new Error("Please use a unique email");
                 }
-                return true; // No user found, email is unique
+                
+                // No user found, email is unique and format is valid
+                return true; 
             } catch (error) {
                 throw new Error(error.message);
             }
         }
+        
          // check for existing phoneNumber
          async function checkExistingPhoneNumber(phoneNumber) {
+            const phoneRegex = /^[0-9]{10}$/;
+
             try {
+                 // Check if the phoneNumber format is valid
+                if (phoneRegex.test(phoneNumber)) {
+                    res.status(200).json({ valid: true, message: 'Phone number is valid' });
+                } else {
+                    res.status(400).json({ valid: false, message: 'Invalid phone number format' });
+                }
+                // Check if the phoneNumber already exists in the database
                 const user = await UserModel.findOne({ phoneNumber });
                 if (user) {
                     throw new Error("Please use a unique phoneNumber");
@@ -82,7 +102,15 @@ async function register(req,res){
         }
          // check for existing bankAccount
          async function checkExistingBankAccount(bankAccount) {
+            const bankAccountRegex = /^[0-9]{12}$/;
             try {
+                // Check if the phoneNumber format is valid
+                if (bankAccountRegex.test(bankAccount)) {
+                    res.status(200).json({ valid: true, message: 'bankAccount  is valid' });
+                } else {
+                    res.status(400).json({ valid: false, message: 'Invalid bankAccount  format' });
+                }
+                // Check if the bankAccount already exists in the database
                 const user = await UserModel.findOne({ bankAccount });
                 if (user) {
                     throw new Error("Please use a unique bankAccount");
@@ -191,9 +219,7 @@ async function login(req,res){
                           useremail=user.email;
                         return res.status(200).send({useremail,
                             msg: "Login Successful...!",
-                            // idEmployee: user.idEmployee,
-                            // firstName:user.firstName,
-                            // token
+                            
                         });                                    
 
                     })

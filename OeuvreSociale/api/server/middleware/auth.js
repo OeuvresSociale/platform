@@ -9,14 +9,9 @@ async function Auth(req, res, next){
         
         // access authorize header to validate request
         const token = req.headers.authorization.split(" ")[1];
-
-        // retrive the user details fo the logged in user
-        const decodedToken = await jwt.verify(token,JWT_SECRET);
-
+        const decodedToken = await jwt.verify(token,JWT_SECRET); //If the token is valid, it extracts the user information (decoded payload) from the token and attaches it to the req
         req.user = decodedToken;
-
         next()
-
     } catch (error) {
         res.status(401).json({ error : "Authentication Failed!"})
     }
@@ -30,6 +25,9 @@ function localVariables(req, res, next){
     }
     next()
 }
+
+
+
 
 
 module.exports = {Auth,localVariables}
