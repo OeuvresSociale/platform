@@ -1,94 +1,104 @@
-.wrapper{
-    width: 580px;
-    height: 400px;
-    background:#fff ;
-    color:#fff ;
+.wrapper {
+    width: 100%; 
+    height: auto; 
+    background: #fff;
+    color: #fff;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,1);
-    grid-template-columns: 40% 60%; /* Divide wrapper into two columns with the blue section taking 1 part and the white section taking 2 parts */
-}
-.wrapper h1{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  }
+  
+  .wrapper h1 {
     font: bold;
     font-size: 42px;
     position: relative;
-    left: 30%;
-    top: 10%;
+    text-align: center; 
     color: #00194F;
-
-}
+  }
   
-.wrapper .blue-section {
-    border-radius:3px;
+  .wrapper .blue-section {
+    border-radius: 3px;
     height: 100%;
     position: relative;
     width: 100%;
     background-color: #00194F;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */  
-}
-
-.blue-section .logo {
-    max-width: 100%; /* Ensure the image does not exceed the container's width */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blue-section .logo {
+    max-width: 100%;
     max-height: 100%;
-}
-
-.wrapper .input-box{
+  }
+  
+  .wrapper .input-box {
     position: relative;
-    top:15% ;
-    left: 10%;
-    width: 80%;
-    height: 50px; ;
-    margin:15px 0 ; 
-    box-shadow: 0 0 10px rgba(0,0,0,1);
-    border: 2px solid rgba(255,255,255,2);
+    margin: 15px 0;
+    width: 90%;
+    height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border: 2px solid rgba(255, 255, 255, 2);
     outline: none;
-    border-radius:5px;
-}
-.input-box input{
+    border-radius: 5px;
+  }
+  
+  .input-box input {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255,255,255,2);
+    border: 2px solid rgba(255, 255, 255, 2);
     border-radius: 40px;
     font-size: 16px;
     color: #000000;
     padding: 20px 45px 20px 20px;
-
-}
-.input-box :-ms-input-placeholder{
-    color:#fff;
-}
-.forget-pass a {
+  }
+  
+  .input-box:-ms-input-placeholder {
+    color: #fff;
+  }
+  
+  .forget-pass a {
     position: relative;
-    top: 60px;
-    left:50%;  
     font-size: 14px;
     color: #fff;
     text-decoration: none;
-    color:#000000 ;
-}
-.forget-pass a:hover {
+    color: #000000;
+    text-align: center; 
+  }
+  
+  .forget-pass a:hover {
     text-decoration: underline;
-}
-.wrapper button {
+  }
+  
+  .wrapper button {
     margin-top: 10px;
-    width:60%;
-    position: relative;
-    left: 20%;
-    top: 25%;
-    margin-bottom:50px;
-    height:45px;
+    width: 80%; 
+    margin: 10px auto; 
+    height: 45px;
     background: #00194F;
     border: none;
     outline: none;
-    border-radius:5px;
-    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     cursor: pointer;
     font-size: 16px;
     color: #000000;
     font-weight: 700;
-}
+  }
+  
+  
+  @media only screen and (max-width: 480px) {
+    .wrapper h1 {
+      font-size: 28px; 
+    }
+  
+    .input-box,
+    .wrapper button {
+      width: 100%;
+    }
+  }
+  
