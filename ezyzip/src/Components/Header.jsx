@@ -17,7 +17,7 @@ const location = useLocation();
     switch (pathname) {
       case '/employeelist':
         return 'Gestion des employés';
-      case '/employeelist/addemployee':
+      case '/employeelist/Addemployee':
         return 'Gestion des employés';
       case '/demande':
         return 'Table des demandes';
