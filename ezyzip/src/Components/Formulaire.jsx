@@ -48,27 +48,27 @@ const[openDelete,setOpenDelete]=useState(false);
            </div>
 <div className="formulaire">
 <div className="f1">
- <div style={{ width: '600px', height: '48px', marginRight: '20px',marginLeft:'20px' }} className="f2" ><input type="text"  placeholder="Nom" /></div>
- <div style={{ width: '575px', height: '48px', marginRight: '10px' }} className="f2"  ><input type="text"placeholder="Prénom" /></div>
+ <div style={{ width: '50%' }} className="f2" ><input type="text"  placeholder="Nom" /></div>
+ <div style={{ width: '50%' }} className="f2"  ><input type="text"placeholder="Prénom" /></div>
 
  </div >
  <div className="f1">
- <div style={{ width: '392px', height: '48px', marginRight: '12px',marginLeft:'20px' }} className="f2" ><input type="text"  placeholder="ID" /></div>
- <div type="text" style={{ width: '390px', height: '48px', marginRight: '12px' }} className="f2"><input  placeholder="Salaire" /></div>
- <div style={{ width: '385px', height: '48px', marginRight: '10px' }} className="f2"><input  style={{ width: '240px' }}  type="date" placeholder="date de recrutement"/></div>
+ <div style={{ width: '33%'}} className="f2" ><input type="text"  placeholder="ID" /></div>
+ <div  style={{ width: '33%'}} className="f2"><input  placeholder="Salaire" /></div>
+ <div style={{ width: '33%'}} className="f2"><input  style={{ width: '240px' }}  type="date" placeholder="date de recrutement"/></div>
 
  </div>
  <div className="f1">
  
- <div style={{ width: '595px', height: '48px', marginRight: '18px' ,marginLeft:'20px'}} className="f2"><input type="text"  placeholder="address email" /></div>
- <div style={{ width: '584px', height: '48px', marginRight: '10px' }}className="f2"><input  type="text"  placeholder="date recrutement" /></div>
+ <div style={{ width: '50%' }}  className="f2"><input type="text"  placeholder="address email" /></div>
+ <div style={{ width: '50%' }} className="f2"><input  type="text"  placeholder="date recrutement" /></div>
  </div>
  <div className="f1">
  
- <div  style={{ width: '1200px', height: '48px', marginRight: '10px' ,marginLeft:'20px'}}className="f2"><input type="text" placeholder="compte bancaire" /></div>
+ <div  style={{ width: '100%' }} className="f2"><input type="text" placeholder="compte bancaire" /></div>
  </div>
  <div className="f1">
- <div style={{ width: '390px', height: '48px', marginRight: '10px', marginLeft:'50px' }}className="f2" >
+ <div style={{ width: '33%' }} className="f2" >
 
  
       <div className="select-container">
@@ -80,7 +80,7 @@ const[openDelete,setOpenDelete]=useState(false);
         </select>
        </div> 
       </div>
-      <div style={{ width: '390px', height: '48px', marginRight: '10px' }}className="f2" >
+      <div style={{ width: '33%' }} className="f2" >
       <div className="select-container">
         <select id="sitfam" name="sitfam" value={null} onChange={handlesitfamChange}>
           <option value="">situation familialle</option>
@@ -90,7 +90,7 @@ const[openDelete,setOpenDelete]=useState(false);
         </select>
        </div> 
       </div>
-      <div style={{ width: '390px', height: '48px', marginRight: '10px' }}className="f2" >
+      <div style={{ width: '33%' }} className="f2" >
       
       <div className="select-container">
         <select id="role" name="role" value={null} onChange={handleroleChange}>
@@ -112,7 +112,7 @@ const[openDelete,setOpenDelete]=useState(false);
 
  </div>
  <div className="f1">
- <div style={{ width: '185px', height: '48px', marginLeft: '377px' }}className="f2"><input type="text"  placeholder="nombre d'enfants" /></div>
+ <div style={{ width: '200px',  marginLeft: '377px' }}className="f2"><input type="text"  placeholder="nombre d'enfants" /></div>
 <div className="btns">
     <button className="cancel">Annuler</button> 
      <button className="add">Ajouter</button>
@@ -121,8 +121,6 @@ const[openDelete,setOpenDelete]=useState(false);
       
 
 </div>
-
-
 
 
 
