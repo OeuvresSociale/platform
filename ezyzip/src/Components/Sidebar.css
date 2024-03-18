@@ -95,6 +95,7 @@ body {
   }.menuicon svg{
     background-color: transparent;
     padding:15px;
+   
   }
   
   .link-taxt {
@@ -128,20 +129,46 @@ body {
     color:#fff;
     background-color: #00194F;
     text-decoration: none;
-    display:flex;
+    display: flex;
+    
+     
     
   } .ai{
     display: none;
   }
 
   .ayhaja:hover{
-     display:flex;
+     display: flex;
+    
+     
       background-color: #EAEDEF;
       color:#00194F;
    
   }.ayhaja:hover a{
     background-color: #EAEDEF;
+  }.ayhaja.active{
+    
+      background-color: #EAEDEF;
+      color:#00194F;
+    
+  } 
+  
+  
+  
+  .ayhaja.active a{
+   
+    background-color: #EAEDEF;
+    color:#00194F;
+  }.ayhaja.active span{
+   
+    background-color: #EAEDEF;
+    color:#00194F;
   }
+
+
+
+
+
   ul{
    display: inline;
     list-style-type: none;
@@ -214,29 +241,8 @@ body {
   
   
   
- 
   
-
-
-
-
-
-
-
-
-
-
   
-
-    
- 
-
-
-
-
-
-
-
 
 
 
