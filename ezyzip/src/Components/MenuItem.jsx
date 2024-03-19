@@ -9,7 +9,11 @@ const { name , icon ,path, subicon,subicon2, subMenus } = props;
 const [expand , setExpand]= useState(false);
 const hide = () => setExpand(!expand);
 
+const [activeItem, setActiveItem] = useState(null);
 
+const handleItemClick = (index) => {
+  setActiveItem(index);
+};
 return (
 <li >
  
@@ -27,13 +31,13 @@ return (
     </NavLink>
 
  {subMenus && subMenus.length > 0 ? (
-    <ul className={expand ?  "ai" : 'submenu'}>
+    <ul className={expand ?  "ai" : 'submenu'} >
         {subMenus.map((menu,index) =>(
-            <NavLink to={menu.path} >
-            <li className= "ayhaja " key={index} >
+            <NavLink to={menu.path}  >
+            <li  key={index}   className={index === activeItem ? 'ayhaja active' : 'ayhaja'} onClick={() => handleItemClick(index)} >
                
-                <a className="sicon">{menu.icon}</a>
-                <span className="subname">{menu.name}</span>
+                <a className="sicon" >{menu.icon}</a>
+                <span className="subname" >{menu.name}</span>
               
             </li></NavLink>
         ))}
@@ -52,3 +56,4 @@ return (
 };
 
 export default MenuItem ;
+
