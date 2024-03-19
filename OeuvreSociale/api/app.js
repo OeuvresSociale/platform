@@ -2,10 +2,11 @@ const express =require("express");
 const dotenv =require("dotenv").config();
 const bodyParser =require("body-parser");
 const mongoose = require ("mongoose");
-const connectDB=require('./server/config/db');
+const {connectDB}=require('./server/config/db');
 const router = require('./server/routes/admin.js');
-const employeerouter = require('./server/routes/EmployeeManagement.js');
-//const routerr = require('router/employee.js');
+const employeeRouter = require('./server/routes/EmployeeManagement.js');
+const typeRequestRouter = require('./server/routes/requestType.js');
+const requestRouter = require('./server/routes/request.js');
 const MongoStore =require('connect-mongo');
 const user =require('./server/models/user');
 
@@ -40,34 +41,34 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 /**api routes*/
 app.use('/api',router);
-app.use('/api',employeerouter);
+app.use('/api',employeeRouter);
+app.use('/api',typeRequestRouter);
+app.use('/api',requestRouter);
 
 
-
-
-function insertuserData(){
-    user.insertMany([
-    {
-        idEmployee:"1",
-        familyName:"meflah",
-        firstName:"yousra",
-        password:"esi",
-        email:"y.meflah@esi.sba.dz",
-        phoneNumber:"1234",
-        sexe:"f",
-        isMarried:false,
+//function insertuserData(){
+   // user.insertMany([
+   // {
+      //  idEmployee:"1",
+       // familyName:"meflah",
+       // firstName:"yousra",
+       // password:"esi",
+       // email:"y.meflah@esi.sba.dz",
+       // phoneNumber:"1234",
+       // sexe:"f",
+       // isMarried:false,
         //numberOfChild
-        bankAccount:"1234",
-        monthlySalary:12,
+       // bankAccount:"1234",
+       // monthlySalary:12,
        // dateStartJob
-        isCommit:true
+        //isCommit:true
        // role
        // profilePicture:
-    },
+   // },
    
-    ])
+   // ])
     
-} 
+//} 
 
 //insertuserData();
 
