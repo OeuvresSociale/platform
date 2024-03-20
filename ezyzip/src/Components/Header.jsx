@@ -4,6 +4,8 @@ import { FaUserCircle } from "react-icons/fa";
 import './Header.css';
 import Logo from '../Assets/Logosec.png';
 import { useLocation } from 'react-router-dom';
+import OIP from '../Assets/OIP.png';
+
 
 const Header = () => {
 
@@ -40,7 +42,7 @@ const location = useLocation();
 </div>
 <div className='box2'>
 <div className='notification'><IoNotificationsOutline /></div>
-<div className='profile' ><FaUserCircle /></div>
+<div className='profile' ><img src='../Assets/OIP.png' /></div>
 
 </div>
 
