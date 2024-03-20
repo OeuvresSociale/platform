@@ -52,8 +52,9 @@ background: #fff;
 .profile {
     cursor: pointer;
     background: #fff;
-}.profile svg {
-    background-color: transparent;
+     width: 52px;
+    height: 54px;
+    align-items: center;
 }
 .notification {
     cursor: pointer;
