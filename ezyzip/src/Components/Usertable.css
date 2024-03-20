@@ -87,7 +87,7 @@
 
   .tableu {
     background-color:#fff;
-   font-size: 19px;
+   font-size: 17px;
     position: relative;
     top:20px;
     margin-top: 70px;
@@ -147,20 +147,7 @@
   }
   
   
-  .custom-select {
-    position: relative;
-  }
-  
-  select{
-    position: relative;
-    display: inline-block;
-    outline:none;
-    border:none;
-    margin-top: 15px;
-    margin-left: 30px;
-    width:250px
-  }
-  
+ 
   
 
 
