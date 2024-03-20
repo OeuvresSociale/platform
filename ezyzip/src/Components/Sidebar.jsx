@@ -31,33 +31,13 @@ function Sidebar({ children }) {
             icon: <FaUsers/>
         },
         {
-            path: "/demande",
-            name: "Demande",
+            path: "/tables",
+            name: "Tables",
             icon: <FaRegListAlt />
-        },
-        {
-            path: "/offre",
-            name: "Offre",
-            icon: <TfiAnnouncement />,
-            subicon :<TfiAngleDown/>,
-            subicon2 :<TfiAngleRight/> ,
-            subMenus: [
-                {
-                    path: "/offre/ajouteroffre",
-                    name: "Ajouter offre",
-                    icon: <FaRegPlusSquare />
-                },
-                {
-                    path: "/offre/tabledoffre",
-                    name: "Table d'offres",
-                    icon: <LuLayoutList />
-                }
-            ]
-        },
-        {
-            path: "/formulaire",
+        }, {
+            path: "/ajouteroffre",
             name: "Formulaire",
-            icon: <TfiWrite  />
+            icon: <FaRegPlusSquare />
         },
         {
             path: "/tresorerie",
@@ -67,18 +47,18 @@ function Sidebar({ children }) {
             subicon2 :<TfiAngleRight/> ,
             subMenus: [
                 {
-                    path: "/tresorerie/offre",
-                    name: "offre",
+                    path: "/dashboard",
+                    name: "Dashboard",
                     icon: <MdOutlineDashboard />
                 },
                 {
-                    path: "/tresorerie/offre",
-                    name: "offre",
+                    path: "/transaction",
+                    name: "Transaction",
                     icon: <HiOutlineSwitchVertical />
                 },
                 {
-                    path: "/tresorerie/offre",
-                    name: "offre",
+                    path: "/demande valid",
+                    name: "Demande valide",
                     icon: <IoListCircleOutline />
                 }
             ]
