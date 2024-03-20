@@ -154,7 +154,7 @@
     position: relative;
     top:580px;
     margin-top: 70px;
-    font-size: 19px;
+    font-size: 17px;
    
   
   }table {
@@ -218,10 +218,11 @@
     background-color: #F7F7F7;
   }.select-container{
     background-color: #F7F7F7;
+    width:100%;
   }
   
   select{
-    width: 100%;
+    width: 80%;
     position: relative;
     display: inline-block;
     outline:none;
