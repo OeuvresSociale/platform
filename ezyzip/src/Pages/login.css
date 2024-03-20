@@ -1,8 +1,6 @@
 .wrapper{
-    position: relative;
-    width: 180%;
+    width: 580px;
     height: 400px;
-    right:50%;
     background:#fff ;
     color:#fff ;
     display: grid;
@@ -32,16 +30,16 @@
 }
 
 .blue-section .logo {
-    max-width: 100%;
+    max-width: 100%; /* Ensure the image does not exceed the container's width */
     max-height: 100%;
 }
 
 .wrapper .input-box{
     position: relative;
     top:15% ;
-    left:10%;
-    width:80%;
-    height:50px; ;
+    left: 10%;
+    width: 80%;
+    height: 50px; ;
     margin:15px 0 ; 
     box-shadow: 0 0 10px rgba(0,0,0,1);
     border: 2px solid rgba(255,255,255,2);
@@ -69,6 +67,7 @@
     top: 60px;
     left:50%;  
     font-size: 14px;
+    color: #fff;
     text-decoration: none;
     color:#000000 ;
 }
