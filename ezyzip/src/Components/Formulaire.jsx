@@ -112,7 +112,7 @@ const[openDelete,setOpenDelete]=useState(false);
 
  </div>
  <div className="f1">
- <div style={{ width: '200px',  marginLeft: '377px' }}className="f2"><input type="text"  placeholder="nombre d'enfants" /></div>
+ <div style={{ width: '200px',  marginLeft: '35%' }}className="f2"><input type="text"  placeholder="nombre d'enfants" /></div>
 <div className="btns">
     <button className="cancel">Annuler</button> 
      <button className="add">Ajouter</button>
