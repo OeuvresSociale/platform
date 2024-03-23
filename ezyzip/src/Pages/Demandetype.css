@@ -1,0 +1,10 @@
+.containerdem {
+   
+    background-color: #EAEDEF;
+    display: flex;
+  } 
+  .contentdem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
