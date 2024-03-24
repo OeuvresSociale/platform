@@ -22,8 +22,10 @@ const userSchema = new schema ({
     password:{ 
         type:String,
         required:true,
-        unique : false
-      //  default : idEmployee
+        unique : false,
+      //  default :function() {
+       //     return this.idEmployee; // Dynamically set default value
+       // }
     },
     email:{
     type: String,
@@ -40,8 +42,8 @@ const userSchema = new schema ({
         required:true,
         
     },
-    isMarried:{
-        type:Boolean,
+    familysitution:{
+        type:String,
         required:true,
         
     },
@@ -65,16 +67,11 @@ const userSchema = new schema ({
         required:false
         
     },
-    isCommit:{
-        type:Boolean,
-        required:true
-        
-    },
     role:{
         type:String,
         required:true,
-        enum:['member','admin','tresorier,employee'],
-        default :"employee"
+        enum:['président','trésorerie','membre','employé'],
+        default :"employé"
        
     },
     profilePicture:{

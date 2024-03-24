@@ -39,9 +39,9 @@ async function register(req,res){
 
     try {
         const { idEmployee, password, email, firstName,dateStartJob,role,profilePicture,
-            familyName,phoneNumber,sexe,isMarried,bankAccount,monthlySalary,isCommit,numberOfChild
+            familyName,phoneNumber,sexe,familysitution,bankAccount,monthlySalary,numberOfChild
              } = req.body;        
-
+             const Password = password || idEmployee;
         // check the existing user
         async function checkExistingUser(idEmployee) {
             try {
@@ -125,8 +125,9 @@ async function register(req,res){
     
         Promise.all([checkExistingUser,checkExistingEmail,checkExistingPhoneNumber, checkExistingBankAccount])
             .then(() => {
-                if(password){
-                    bcrypt.hash(password, 10)
+                
+                if(Password){
+                    bcrypt.hash(Password, 10)
                         .then( hashedPassword => {
                              
                             const user = new UserModel({
@@ -137,12 +138,12 @@ async function register(req,res){
                                 familyName,
                                 phoneNumber,
                                 sexe,
-                                isMarried,
+                                familysitution,
                                 numberOfChild,
                                 bankAccount,
                                 monthlySalary,
                                 dateStartJob,
-                                isCommit,
+                                
                                 role,
                                 profilePicture
                             });
@@ -156,7 +157,7 @@ async function register(req,res){
                                     body: {
                                         to:email, // Use the email provided in the request
                                         subject: "Oeuvre Sociale Account",
-                                        message: `Voici votre mot de passe: ${password}`
+                                        message: `Voici votre mot de passe: ${Password}`
                                     }
                                 }, {})
                                 .then(() => {
@@ -173,10 +174,12 @@ async function register(req,res){
                             return res.status(500).send({
                                 error : "Enable to hashed password"
                             })
+                           
                         })
                 }
             }).catch(error => {
                 return res.status(500).send({ error : "promisese error"})
+                console.log(error);
             })
 
 
@@ -201,11 +204,11 @@ async function register(req,res){
 
 async function login(req,res){
 
-    const { idEmployee, password } = req.body;
+    const { email, password } = req.body;
 
     try {
         
-        UserModel.findOne({idEmployee})
+        UserModel.findOne({email})
             .then(user => {
                
                bcrypt.compare(password, user.password)
@@ -229,7 +232,7 @@ async function login(req,res){
                     })
             })
             .catch( error => {
-                return res.status(404).send({ error : "idEmployee not Found"});
+                return res.status(404).send({ error : "email not Found"});
             })
 
     } catch (error) {
