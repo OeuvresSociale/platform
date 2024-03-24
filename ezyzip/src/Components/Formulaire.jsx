@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { GoTrash } from "react-icons/go";
 import { MdOutlineModeEditOutline } from "react-icons/md";
@@ -8,6 +8,7 @@ import { BsSearch } from "react-icons/bs";
 import Deleteuser from "./Deleteuser";
 import Modefyuser from "./Modefyuser";
 
+import axios from 'axios';
 
 
 const Formulaire = () => {
@@ -15,8 +16,30 @@ const[openDelete,setOpenDelete]=useState(false);
   const[openModefy,setOpenModefy]=useState(false);
 
     
-    const [selectedGender, setSelectedGender] = useState(''); 
 
+
+    
+  
+    const [inputs, setInputs]=useState({
+      idEmployee:"",
+      familyName:"",
+      firstName:"",
+      email:"",
+      phoneNumber: "" ,
+      sexe:"",
+      familysitution:"",
+      numberOfChild:"",
+      bankAccount:"",
+      monthlySalary:"",
+      dateStartJob:"",
+      password:"",
+      role:"",
+      
+      
+    });
+    
+    const [err, setErr]=useState(null);
+    // Effect to update inputs state when gender, role, or sitfam change
     const handleGenderChange = (e) => {
       setSelectedGender(e.target.value);
     };
@@ -32,7 +55,37 @@ const[openDelete,setOpenDelete]=useState(false);
     const handlesitfamChange = (e) => {
       setSelectedsitfam(e.target.value);
     };
+    const handleChange = (e) =>{
+      setInputs((prev)=>({...prev,[e.target.name]:e.target.value}));
+    };
+    const [selectedGender, setSelectedGender] = useState(''); 
 
+    
+    /** */
+      // Effect to update inputs state when gender, role, or sitfam change
+  useEffect(() => {
+    setInputs(prevInputs => ({
+      ...prevInputs,
+      sexe: selectedGender,
+      role: selectedrole,
+      familysitution: selectedsitfam
+    }));
+  }, [selectedGender, selectedrole, selectedsitfam]);
+
+
+    const handleClick = async (e) => {
+      
+     e.preventDefault();//not refreshing the page 
+    try{
+     
+      await axios.post("http://localhost:8000/api/register",inputs);
+      
+    }
+    catch(err){
+   // setErr(err.response.data);
+    console.log(err);
+    }
+    };
     
   
 
@@ -48,24 +101,24 @@ const[openDelete,setOpenDelete]=useState(false);
            </div>
 <div className="formulaire">
 <div className="f1">
- <div style={{ width: '50%' }} className="f2" ><input type="text"  placeholder="Nom" /></div>
- <div style={{ width: '50%' }} className="f2"  ><input type="text"placeholder="Prénom" /></div>
+ <div style={{ width: '50%' }} className="f2" ><input type="text" name="familyName" placeholder="Nom" onChange={handleChange} /></div>
+ <div style={{ width: '50%' }} className="f2"  ><input type="text"name="firstName" placeholder="Prénom" onChange={handleChange} /></div>
 
  </div >
  <div className="f1">
- <div style={{ width: '33%'}} className="f2" ><input type="text"  placeholder="ID" /></div>
- <div  style={{ width: '33%'}} className="f2"><input  placeholder="Salaire" /></div>
- <div style={{ width: '33%'}} className="f2"><input  style={{ width: '240px' }}  type="date" placeholder="date de recrutement"/></div>
+ <div style={{ width: '33%'}} className="f2" ><input type="text"  name="idEmployee" placeholder="ID" onChange={handleChange} /></div>
+ <div  style={{ width: '33%'}} className="f2"><input   name="monthlySalary" placeholder="Salaire" onChange={handleChange} /></div>
+ <div style={{ width: '33%'}} className="f2"><input  style={{ width: '240px' }}  type="date" name="dateStartJob" placeholder="date de recrutement" onChange={handleChange}/></div>
 
  </div>
  <div className="f1">
  
- <div style={{ width: '50%' }}  className="f2"><input type="text"  placeholder="address email" /></div>
- <div style={{ width: '50%' }} className="f2"><input  type="text"  placeholder="date recrutement" /></div>
+ <div style={{ width: '50%' }}  className="f2"><input type="text"  name="email" placeholder="address email" onChange={handleChange} /></div>
+ <div style={{ width: '50%' }} className="f2"><input  type="text"  name="phoneNumber" placeholder="Phone Number" onChange={handleChange} /></div>
  </div>
  <div className="f1">
  
- <div  style={{ width: '100%' }} className="f2"><input type="text" placeholder="compte bancaire" /></div>
+ <div  style={{ width: '100%' }} className="f2"><input type="text" name="bankAccount" placeholder="compte bancaire" onChange={handleChange} /></div>
  </div>
  <div className="f1">
  <div style={{ width: '33%' }} className="f2" >
@@ -112,10 +165,10 @@ const[openDelete,setOpenDelete]=useState(false);
 
  </div>
  <div className="f1">
- <div style={{ width: '200px',  marginLeft: '377px' }}className="f2"><input type="text"  placeholder="nombre d'enfants" /></div>
+ <div style={{ width: '200px',  marginLeft: '377px' }}className="f2"><input type="text" name="numberOfChild" placeholder="nombre d'enfants" onChange={handleChange} /></div>
 <div className="btns">
     <button className="cancel">Annuler</button> 
-     <button className="add">Ajouter</button>
+     <button className="add" onClick={handleClick}>Ajouter</button>
 </div>
  </div>
       
