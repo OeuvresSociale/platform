@@ -1,6 +1,12 @@
 const dotenv =require("dotenv").config();
 const nodemailer = require('nodemailer');
 
+/**{
+           "to":"y.meflah@esi-sba.dz",
+            "subject":"Your OTP code",
+            "message":"Your OTP is"
+            
+        } */
 async function sendEmail(req,res){
     
     const{to,subject,message}=req.body;   

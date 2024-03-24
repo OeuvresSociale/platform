@@ -10,7 +10,7 @@ const typeRequestSchema = new mongoose.Schema({
     },
     desc: {
         type: String,
-        required: false,
+        required: false, 
     },
     docs: {
         type: [String], // We'll store the values in an array for validation
