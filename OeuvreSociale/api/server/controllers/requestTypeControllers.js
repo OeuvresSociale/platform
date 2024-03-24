@@ -107,43 +107,6 @@ const deleteTypeRequest = async (req, res) => {
 
 
 
-//create
-const addTypeRequestLaon = async (req, res) => {
-  try {
-    if (!req.body.title) {
-      return res.status(400).json({ error: "Title is required" });
-    }
-    // Search for existing typeRequest with the specified title
-    const existingTypeRequest = await typeRequest.findOne({
-      title: req.body.title,
-    });
-    // If typeRequest with the same title already exists, return an error
-    if (existingTypeRequest) {
-      return res.status(409).json({ error: "TypeRequest already exists" });
-    } else {
-      try {
-        //cheking conditions
-
-
-
-        const newTypeRequest = new typeRequest(req.body);
-        const saveTypeRequest = await newTypeRequest.save();
-        res.status(200).json(saveTypeRequest);
-        console.log("TypeRequest has been created");
-      } catch (error) {
-        // Handle other errors
-        console.error(error);
-        res.status(500).json({ error: "Internal server error" });
-      }
-    }
-  } catch (error) {
-    // Handle other errors
-    console.error(error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
-
-
 module.exports = {
   getTypesRequest,
   getTypeRequest,

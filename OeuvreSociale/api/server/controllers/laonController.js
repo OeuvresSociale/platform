@@ -43,10 +43,8 @@ const laonModel= require('../models/Laon');
             if (repaymentAmountPerMonth > maxAllowedReturnPerMonth) {
               return res.status(400).json({ error: 'Repayment amount per month exceeds maximum allowed' });
             }
-          
-            console.log(`We will retrieve ${repaymentAmountPerMonth} from your account for ${duration} months.`);
-            
-            
+           console.log(`We will retrieve ${repaymentAmountPerMonth} from your account for ${duration} months.`);
+        
         // // Create an array to store repayment amounts for each month
         // const repaymentSchedule = [];
         // for (let i = 1; i <= duration; i++) {
@@ -55,7 +53,6 @@ const laonModel= require('../models/Laon');
         //     repaymentAmount: repaymentAmountPerMonth,
         //   });
         // }
-
 
       const result = {
                     duration: duration,
@@ -66,12 +63,9 @@ const laonModel= require('../models/Laon');
                     maxAllowedRepaymentPerMonth: maxAllowedReturnPerMonth,
                     repaymentPerMonth: repaymentAmountPerMonth,
                              
-                  };
-                
+                  };               
                   res.status(200).json(result);
 
-
- 
              const request = new laonModel(req.body);
              const savedRequest = await request.save();
             
