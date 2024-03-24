@@ -9,7 +9,7 @@ body {
     
     display: flex;
     flex-direction: column; /* Ensure flex items stack vertically */
-    height: 100%;
+     height: 100%;
     width: 250px;
    
     background-color: #00194F; /* Blue background color */
@@ -20,6 +20,7 @@ body {
   }
   
   .inactive {
+        height: 780px;
     display: flex;
     flex-direction: column; 
     width:86px;
