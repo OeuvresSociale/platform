@@ -1,4 +1,6 @@
 const typeRequest = require("../models/typeRequest");
+
+
 //Get all request
 const getTypesRequest = async (req, res) => {
   try {
@@ -6,7 +8,7 @@ const getTypesRequest = async (req, res) => {
     res.status(200).json(typesRequest);
   } catch (error) {
     res.status(404).json({ message: error.message });
-  }
+  } 
 };
 //get one 
 const getTypeRequest = async (req, res) => {
@@ -142,15 +144,11 @@ const addTypeRequestLaon = async (req, res) => {
 };
 
 
-
-
-
-
-
 module.exports = {
   getTypesRequest,
   getTypeRequest,
   addTypeRequest,
   deleteTypeRequest,
   updateTypeRequest,
+  
 };

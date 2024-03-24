@@ -1,7 +1,9 @@
 import "./login.css"
 import React,{useState} from "react"
+
 import axios from 'axios';
 export const Login = () => {
+
     const [email, setEmail]=useState('');
     const [pass, setPass] = useState('');
 
@@ -51,3 +53,5 @@ export const Login = () => {
         </div>
     )
 }
+
+export default Login;

@@ -72,8 +72,8 @@ const userSchema = new schema ({
         required:true,
     //   enum:['member','admin','tresorier','employee'],
    //    default :"employee"
-        enum:['président','trésorerie','membre','employé'],
-        default :"employé"
+        enum:['president','tresorerie','membre','employe'],
+        default :"employe"
 
        
     },

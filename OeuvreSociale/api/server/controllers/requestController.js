@@ -101,7 +101,7 @@ const getRequest = async (req, res) => {
       res.status(500).json(err);
   }
 };
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// /////////////////////////////////////////////////////////////////////////////////////////
 //create a new  request(faire une demande par employee)
 const createRequest = async (req, res) => {
   try {
@@ -183,74 +183,11 @@ const suiviRequest = async (req, res) => {
 };
 
 
-
-const UserModel= require('../models/user');
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//create a new  request(faire une demande par employee of Laon)
-const createLaonRequest = async (req, res) => {
-  try {
-    // Extract file information from req.files array
-    const filesData = req.files.map((file) => ({
-      fileId: file.filename, // Assuming you're using multer to store files locally
-      filename: file.originalname,
-    }));
-    const user= req.user;
-    salary=user.salary;
-    console.log(salary);
-    //const amount = req.body.amonut;
-    const amount=5000;
-    const pourcentage=0.3;
-    let x=salary*pourcentage;
-    //let mois=req.body.mois;
-    let mois = 12;
-    let y =5000 / mois; // 12 mois
-    if(y>x){
-      console.log('u cannot get a laon');
-    }else{
-      console.log(`we will retrieve from ur account ${y}for ${mois}months`);
-    }
-
-    // Create a new instance of RequestModel with files data
-    const request = new Request({
-      creationDate: new Date(),
-      requestTypeId: req.body.requestTypeId,
-      employeeId: req.body.employeeId,
-
-      files: filesData, // Set files array with file information
-    });
-    // Save the new request to the database
-    const savedRequest = await request.save();
-
-    // Respond with the saved request
-    res.status(201).json(savedRequest);
-  } catch (error) {
-    console.error("Error creating request:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
   getRequest,
   getallRequests,
   getMyRequests,
   createRequest,
   suiviRequest,
-  createLaonRequest
+  
 };
