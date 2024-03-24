@@ -13,7 +13,6 @@ const otpGenerator =require('otp-generator');
 
 
 
-
 let useremail; //email of user so we can send him an otp email
 
 /** POST: http://localhost:8000/api/register 
@@ -213,20 +212,27 @@ async function login(req,res){
                         if(!passwordCheck) return res.status(400).send({ error: "Incorrect password"});
 
                         // create jwt token
-                        const token = jwt.sign({idEmployee : user.idEmployee
-                                    }, jwtSecret , { expiresIn : "24h"});
-                                    res.cookie('token', token, { httpOnly: true });
+                        const token = jwt.sign(
+                            {   idEmployee : user.idEmployee,
+                                role : user.role
+                            }, jwtSecret , { expiresIn : "24h"});
+                             res.cookie('token', token, { httpOnly: true });
                           useremail=user.email;
-                        return res.status(200).send({useremail,
+                          role=user.role;
+                          salary=user.salary;
+                          console.log('token:',token);
+                          return res.status(200).send(
+                            {useremail,
+                            role,
+                            salary,
                             msg: "Login Successful...!",
-                            
-                        });                                    
+                            });                                    
 
                     })
                     .catch(error =>{
                        
                         return res.status(400).send({ error: "Password does not Match"})
-                    })
+                    })   
             })
             .catch( error => {
                 return res.status(404).send({ error : "idEmployee not Found"});

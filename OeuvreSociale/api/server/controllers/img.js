@@ -5,6 +5,7 @@ const User = require('../models/user.js');
  /**
       * Accept a single file with the name testImage.
       *  The single file will be stored in req.file
+      * to test use postman in body : form-data add a name(text) & testImage(file):import image
  */
 async function uploadImage(req, res) {
 

@@ -73,7 +73,7 @@ const userSchema = new schema ({
     role:{
         type:String,
         required:true,
-        enum:['member','admin','tresorier,employee'],
+        enum:['member','admin','tresorier','employee'],
         default :"employee"
        
     },
