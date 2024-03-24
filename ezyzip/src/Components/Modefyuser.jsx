@@ -94,12 +94,13 @@ const Modefyuser   = ({closeModefy}) => {
 
  </div>
  <div className="f3">
+      {selectedsitfam === 'Marié' &&(
  <div style={{ width: '185px', height: '48px', marginLeft: '377px' }}className="f4">
  <span >Nombre d'enfants</span>
     <input type="text"  placeholder="nombre d'enfants" />
     
     
-    </div>
+    </div> )}
 
 
 

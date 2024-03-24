@@ -7,9 +7,12 @@ import Header from './Components/Header.jsx'
 import './App.css'
 import Usertable from './Components/Usertable.jsx';
 import Formulaire from './Components/Formulaire.jsx';
-import { Login } from './Pages/Login.jsx';
+
 import Modefyuser from './Components/Modefyuser.jsx';
 import Deleteuser from './Components/Deleteuser.jsx';
+import Login from './Pages/Login.jsx';
+import Demandetype from './Pages/Demandetype.jsx';
+
 
 const App = () => {
   return (
@@ -19,8 +22,8 @@ const App = () => {
           <Route path='/employeelist/Addemployee' element={<Addemployee />} />
           <Route path='/employeelist' element={<Employeelist />} />
          <Route path='/login' element={<Login />} />
-     <Route path='/employeelist/modefyuser' element={<Modefyuser/>} />
-         <Route path='/employeelist/deleteuser' element={<Deleteuser/>} />
+   
+    <Route path='/tables/demandetype' element={<Demandetype />} />
         </Routes>
      
      
