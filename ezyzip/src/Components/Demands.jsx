@@ -1,4 +1,4 @@
-import '../style/demands.css';
+import './demands.css';
 import React, { useState } from 'react';
 const demands = [
   {
