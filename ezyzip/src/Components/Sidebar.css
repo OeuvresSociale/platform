@@ -9,8 +9,9 @@ body {
     
     display: flex;
     flex-direction: column; /* Ensure flex items stack vertically */
-     height: 100%;
+    height: 100%;
     width: 250px;
+   
    
     background-color: #00194F; /* Blue background color */
     color: #fff; /* White text color */
@@ -20,7 +21,7 @@ body {
   }
   
   .inactive {
-        height: 780px;
+    
     display: flex;
     flex-direction: column; 
     width:86px;
@@ -123,12 +124,15 @@ body {
     margin: 0;
     background-color: #00194F;
     
+    
   }
   
   .ayhaja {
     padding:8px 8px;
     color:#fff;
     background-color: #00194F;
+    display:inline-block;
+    
     text-decoration: none;
     display: flex;
     
@@ -179,38 +183,68 @@ body {
 
 
 
-  span{
-    
-    
-    background-color: #00194F;
-  }
   
 
 
 
 
-  a{
+  .ayhaja a{
     background-color: #00194F;
+    display:inline-block;
     text-decoration: none;
    
-  } a svg {
+  } .ayhaja svg {
     padding: 10px;
     background-color: transparent;
-  } a:hover{
+  }.ayhaja:hover{
     background-color: #EAEDEF;
     color:#00194F;
-  } a:hover span{
+  }.ayhaja:hover span{
+    display:inline-block;
+    text-decoration: none;
+    background-color: #EAEDEF;
+  } 
+  
+  
+  
+   .ayhaja:hover .menuicon {
+    background-color: #EAEDEF;
+    color:#00194F;
+   
+  }
+
+
+
+   a svg {
+    padding: 10px;
+    background-color: transparent;
+  }.menuitem:hover{
+    background-color: #EAEDEF;
+    color:#00194F;
+  }.menuitem:hover span{
     
     background-color: #EAEDEF;
   } 
   
   
   
-  a:hover .menuicon {
+  .menuitem:hover .menuicon {
     background-color: #EAEDEF;
     color:#00194F;
    
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -238,15 +272,21 @@ body {
     position: relative;
    
    font-size: 22px;
-  } 
-  
-  
-  
+  }
+   
   
   
 
 
+  
 
+
+
+
+
+
+
+ 
 
 
 
