@@ -50,7 +50,7 @@ const userSchema = new schema ({
     numberOfChild:{
         type:String,
         required:false,
-        unique : false
+        unique : false, default :"0"
     },
     bankAccount:{
         type:String,
@@ -70,10 +70,11 @@ const userSchema = new schema ({
     role:{
         type:String,
         required:true,
-    //   enum:['member','admin','tresorier','employee'],
-   //    default :"employee"
+
         enum:['president','tresorerie','membre','employe'],
         default :"employe"
+
+        
 
        
     },
