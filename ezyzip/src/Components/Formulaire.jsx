@@ -37,8 +37,8 @@ const[openDelete,setOpenDelete]=useState(false);
       
       
     });
-    
-    const [err, setErr]=useState(null);
+    //set erreur 
+    const [error, setErr]=useState(null);
     // Effect to update inputs state when gender, role, or sitfam change
     const handleGenderChange = (e) => {
       setSelectedGender(e.target.value);
@@ -81,13 +81,13 @@ const[openDelete,setOpenDelete]=useState(false);
       await axios.post("http://localhost:8000/api/register",inputs);
       
     }
-    catch(err){
-   // setErr(err.response.data);
-    console.log(err);
+    catch(error){
+    setErr(error.response.data);
+    
     }
     };
     
-  
+    //const errorMessage = error && error.error ? error.error : ""; 
 
 
     return (
@@ -126,7 +126,7 @@ const[openDelete,setOpenDelete]=useState(false);
  
       <div className="select-container">
         <select id="gender" name="gender" value={null} onChange={handleGenderChange}>
-          <option value="">sexe</option>
+         
           <option value="male">Male</option>
           <option value="female">Female</option>
          
@@ -136,9 +136,9 @@ const[openDelete,setOpenDelete]=useState(false);
       <div style={{ width: '33%' }} className="f2" >
       <div className="select-container">
         <select id="sitfam" name="sitfam" value={null} onChange={handlesitfamChange}>
-          <option value="">situation familialle</option>
-          <option value="Marié">Marié</option>
-          <option value="célibataire">célibataire</option>
+          
+          <option value="Marie">Marié</option>
+          <option value="celibataire">célibataire</option>
          
         </select>
        </div> 
@@ -147,11 +147,11 @@ const[openDelete,setOpenDelete]=useState(false);
       
       <div className="select-container">
         <select id="role" name="role" value={null} onChange={handleroleChange}>
-          <option value="">role</option>
-          <option value="président">président</option>
-          <option value="trésorerie">trésorerie</option>
+         
+          <option value="president">président</option>
+          <option value="tresorerie">trésorerie</option>
           <option value="membre">membre</option>
-          <option value="employé">employé</option>
+          <option value="employe">employé</option>
          
         </select>
         </div> 
@@ -165,8 +165,8 @@ const[openDelete,setOpenDelete]=useState(false);
 
  </div>
  <div className="f1">
-
-    {selectedsitfam === 'Marié' &&(
+  
+ {selectedsitfam === 'Marie' &&(
  <div style={{ width: '200px',  marginLeft: '35%' }}className="f2"><input type="text"  name="numberOfChild" placeholder="nombre d'enfants" onChange={handleChange} /></div> )}
 
 <div className="btns">
@@ -174,7 +174,11 @@ const[openDelete,setOpenDelete]=useState(false);
      <button className="add" onClick={handleClick}>Ajouter</button>
 </div>
  </div>
-      
+ <p>
+  { //affiche le message d'erreur
+//errorMessage
+}
+</p>
 
 </div>
 
