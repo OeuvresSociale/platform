@@ -11,11 +11,11 @@ const imageSchema = new schema({
         data:Buffer,
         contentType:String
     },
-    user:{
+    employeeId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-      
-    }
+        ref: 'user',
+        required: true
+    },
    
 })
 

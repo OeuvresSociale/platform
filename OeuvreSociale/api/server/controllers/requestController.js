@@ -1,6 +1,8 @@
 const Request = require("../models/request");
 const Employee = require("../models/user");
 const TypeRequest = require("../models/typeRequest");
+
+
 //Get all request for employee
 const getMyRequests = async (req, res) => {
   //current page
@@ -80,7 +82,9 @@ const getallRequests = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-};
+
+  
+ };
 //Get one request
 const getRequest = async (req, res) => {
   try {
@@ -97,8 +101,8 @@ const getRequest = async (req, res) => {
       res.status(500).json(err);
   }
 };
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//create a new  request
+///////////////////////////////// /////////////////////////////////////////////////////////////////////////////////////////
+//create a new  request(faire une demande par employee)
 const createRequest = async (req, res) => {
   try {
     // Extract file information from req.files array
@@ -177,10 +181,13 @@ const suiviRequest = async (req, res) => {
     res.status(401).json("this request is not existed");
   }
 };
+
+
 module.exports = {
   getRequest,
   getallRequests,
   getMyRequests,
   createRequest,
   suiviRequest,
+  
 };

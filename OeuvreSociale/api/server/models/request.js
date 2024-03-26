@@ -29,8 +29,12 @@ const requestSchema = new mongoose.Schema({
         type: String,
         required:false
     },
+    amount :{
+        required: false,
+        type:Number
+    },
     files: [{
-        fileId: String,
+        fileId: String, 
         filename: String
     }]
 });

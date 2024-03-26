@@ -1,4 +1,6 @@
 const typeRequest = require("../models/typeRequest");
+
+
 //Get all request
 const getTypesRequest = async (req, res) => {
   try {
@@ -6,7 +8,7 @@ const getTypesRequest = async (req, res) => {
     res.status(200).json(typesRequest);
   } catch (error) {
     res.status(404).json({ message: error.message });
-  }
+  } 
 };
 //get one 
 const getTypeRequest = async (req, res) => {
@@ -21,7 +23,15 @@ catch(err){
 
 
 };
-//create
+/**
+ * for testign
+ * {"title": "Bourse de nouveau-né",
+    "docs": [
+      "Acte de naissance du nouveau-né",
+      "Attestation de travail"]} req 
+ 
+ */
+//create new type of request by admin
 const addTypeRequest = async (req, res) => {
   try {
     if (!req.body.title) {
@@ -94,10 +104,14 @@ const deleteTypeRequest = async (req, res) => {
   }
 };
 
+
+
+
 module.exports = {
   getTypesRequest,
   getTypeRequest,
   addTypeRequest,
   deleteTypeRequest,
   updateTypeRequest,
+  
 };

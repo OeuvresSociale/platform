@@ -70,8 +70,12 @@ const userSchema = new schema ({
     role:{
         type:String,
         required:true,
+
         enum:['president','tresorerie','membre','employe'],
         default :"employe"
+
+        
+
        
     },
     profilePicture:{
